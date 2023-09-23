@@ -1,0 +1,44 @@
+﻿@model RegisterStudentViewModel
+
+<div class="form-body">
+    <div class="row">
+        <div class="form-holder">
+            <div class="form-content">
+                <div class="form-items">
+                    <h3>Şagirdlərin qeydiyyatı</h3>
+                    <form asp-controller="Student" asp-action="RegisterStudent" method="post" class="requires-validation" novalidate>
+
+                        <div class="col-md-12">
+                            <input class="form-control" type="number" asp-for="StudentNumber" placeholder="Şagirdin nömrəsi" required>
+                            <span class="validationMessage" asp-validation-for="StudentNumber"></span>
+                        </div>
+
+                        <div class="col-md-12">
+                            <input class="form-control" type="text" asp-for="StudentName" placeholder="Şagirdin adı" required>
+                            <span class="validationMessage" asp-validation-for="StudentName"></span>
+                        </div>
+
+                        <div class="col-md-12">
+                            <input class="form-control" type="text" asp-for="StudentSurname" placeholder="Şagirdin soyadı" required>
+                            <span class="validationMessage" asp-validation-for="StudentSurname"></span>
+                        </div>
+
+                        <div class="col-md-12">
+                            <select asp-for="ClassNumber" class="form-select mt-3" required>
+                                <option selected disabled value="">Sinifi</option>
+                                <option value="1">A</option>
+                                <option value="2">B</option>
+                                <option value="3">C</option>
+                            </select>
+                            <span class="validationMessage" asp-validation-for="ClassNumber"></span>
+                        </div>
+
+                        <div class="form-button mt-3">
+                            <button id="submit" type="submit" class="btn btn-primary">Əlavə et</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

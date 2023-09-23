@@ -1,0 +1,49 @@
+﻿@model RegisterLessonViewModel
+
+<div class="form-body">
+    <div class="row">
+        <div class="form-holder">
+            <div class="form-content">
+                <div class="form-items">
+                    <h3>Dərslərin qeydiyyatı</h3>
+                    <form asp-controller="Lesson" asp-action="RegisterLesson" method="post">
+
+                        <div class="col-md-12">
+                            <input asp-vali class="form-control" type="text" asp-for="LessonCode" placeholder="Dərs kodu" required>
+                            <span class="validationMessage" asp-validation-for="LessonCode"></span>
+                        </div>
+
+                        <div class="col-md-12">
+                            <input class="form-control" type="text" asp-for="LessonName" placeholder="Dərsin adı" required>
+                            <span class="validationMessage" asp-validation-for="LessonName"></span>
+                        </div>
+
+                        <div class="col-md-12">
+                            <select asp-for="ClassNumber" class="form-select mt-3" required>
+                                <option selected disabled value="">Sinifi</option>
+                                <option value="1">A</option>
+                                <option value="2">B</option>
+                                <option value="3">C</option>
+                            </select>
+                            <span class="validationMessage" asp-validation-for="ClassNumber"></span>
+                        </div>
+
+                        <div class="col-md-12">
+                            <input class="form-control" type="text" asp-for="TeacherName" placeholder="Dərsi verən müəllimin adı" required>
+                            <span class="validationMessage" asp-validation-for="TeacherName"></span>
+                        </div>
+
+                        <div class="col-md-12">
+                            <input class="form-control" type="text" asp-for="TeacherSurname" placeholder="Dərsi verən müəllimin soyadı" required>
+                            <span class="validationMessage" asp-validation-for="TeacherSurname"></span>
+                        </div>
+
+                        <div class="form-button mt-3">
+                            <button id="submit" type="submit" class="btn btn-primary">Əlavə et</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
